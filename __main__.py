@@ -9,7 +9,6 @@ def main(input_file, output_file, cluster_on, cluster_number, pretty=False):
         json_data = json.loads(f.read())
         clusters = makeCluster(json_data, cluster_on, cluster_number)
         with open(output_file, 'w') as w:
-            w.write(clusters)
             if pretty:
                 json.dump(clusters, indent=4, sort_keys=True, fp=w)
             else:
